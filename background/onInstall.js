@@ -1,9 +1,9 @@
 
 chrome.runtime.onInstalled.addListener(function() {
-    var mainCategoryImages, subCategoryImages, availableMainIcons, availableSubIcons;
+    var mainCategoryImages, subCategoryImages;
 
     mainCategoryImages = {
-        "1" : "./res/MainCategory/MainCategory_1_edited.png",
+        "1" : "res/MainCategory/MainCategory_1_edited.png",
         "2" : "res/MainCategory/MainCategory_2_edited.png",
         "3" : "res/MainCategory/MainCategory_3_edited.png",
         "4" : "res/MainCategory/MainCategory_4_edited.png",

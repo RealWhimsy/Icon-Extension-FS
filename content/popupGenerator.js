@@ -88,23 +88,19 @@ function setupIconContainer() {
 function setupMainCategoryIcon() {
     chrome.storage.sync.get(['availableMainIcons'], function(result) {
         availableMainIcons = result['availableMainIcons'];
+        console.log(availableMainIcons);
+        if(Object.keys(availableMainIcons).length <= 0) {
+            resetMainIcons();
+        }
         displayMainIcon();
     });
 
 }
 
 function displayMainIcon() {
-    let randomIndex = Math.random();
-    randomIndex = randomIndex * Object.keys(availableMainIcons).length;
-    randomIndex = Math.floor(randomIndex);
-    currentMainIcon = availableMainIcons[Object.keys(availableMainIcons)[randomIndex]];
-    delete availableMainIcons[Object.keys(availableMainIcons)[randomIndex]];
-    chrome.storage.sync.set({availableMainIcons: availableMainIcons}, function() {
-        console.log("deleted chosen main icon");
-    });
-    mainIconChosen = true;
+    getRandomMainIcon();
+    setMainIconAsUsed();
 
-    console.log(currentMainIcon);
     mainCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentMainIcon));
     mainCategoryIcon.setAttribute('id', 'mainCategoryIcon');
 }
@@ -112,23 +108,67 @@ function displayMainIcon() {
 function setupSubCategoryIcon() {
     chrome.storage.sync.get(['availableSubIcons'], function(result) {
         availableSubIcons = result['availableSubIcons'];
+        if(Object.keys(availableSubIcons).length <= 0) {
+            resetSubIcons();
+        }
         displaySubIcon();
     });
 }
 
 function displaySubIcon() {
+    getRandomSubIcon();
+    setSubIconAsUsed();
+
+    subCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentSubIcon));
+    subCategoryIcon.setAttribute('id', 'subCategoryIcon');
+}
+
+function getRandomMainIcon() {
+    let randomIndex = Math.random();
+    randomIndex = randomIndex * Object.keys(availableMainIcons).length;
+    randomIndex = Math.floor(randomIndex);
+    currentMainIcon = availableMainIcons[Object.keys(availableMainIcons)[randomIndex]];
+    delete availableMainIcons[Object.keys(availableMainIcons)[randomIndex]];
+}
+
+function getRandomSubIcon() {
     let randomIndex = Math.random();
     randomIndex = randomIndex * Object.keys(availableSubIcons).length;
     randomIndex = Math.floor(randomIndex);
-
     currentSubIcon = availableSubIcons[Object.keys(availableSubIcons)[randomIndex]];
     delete availableSubIcons[Object.keys(availableSubIcons)[randomIndex]];
-    chrome.storage.sync.set({availableSubIcons: availableSubIcons}, function() {
-        
+}
+
+function setMainIconAsUsed() {
+    chrome.storage.sync.set({availableMainIcons: availableMainIcons}, function() {
+        console.log("deleted chosen main icon");
     });
-    subIconChosen = true;
-    subCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentSubIcon));
-    subCategoryIcon.setAttribute('id', 'subCategoryIcon');
+}
+
+function setSubIconAsUsed() {
+    chrome.storage.sync.set({availableSubIcons: availableSubIcons}, function() {
+        console.log("deleted chosen sub icon");
+    });
+}
+
+function resetMainIcons() {
+    let mainCategoryImages;
+    chrome.storage.sync.get(['mainCategoryImages'], function(result) {
+        mainCategoryImages = result;
+        chrome.storage.sync.set({availableMainIcons: mainCategoryImages['mainCategoryImages']}, function() {
+            setupMainCategoryIcon();
+        });
+    });
+}
+
+function resetSubIcons() {
+    let subCategoryImages;
+    chrome.storage.sync.get(['subCategoryImages'], function(result) {
+        subCategoryImages = result;
+        chrome.storage.sync.set({availableSubIcons: subCategoryImages['subCategoryImages']}, function() {
+            setupMainCategoryIcon();
+        });
+    });
 }
 
 function on() {
