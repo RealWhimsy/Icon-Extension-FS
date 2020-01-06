@@ -1,16 +1,22 @@
 
 let mainCategoryIcon, subCategoryIcon, overlay, iconContainer, overlayBox, informationText, acceptButton, declineButton,
-    buttonContainer, availableMainIcons, availableSubIcons;
+    buttonContainer, availableMainIcons, availableSubIcons, lastShownTimestamp;
 
-createOverlay();
-createOverlayBox();
-createIcons();
-createInformationText();
-createButtons();
-appendAllChildren();
+let currentTime = Date.now();
 
+chrome.storage.sync.get('lastShownTimestamp', function(result) {
+   if((currentTime - result['lastShownTimestamp']) / 1000 >= 3600) {
+       createOverlay();
+       createOverlayBox();
+       createIcons();
+       createInformationText();
+       createButtons();
+       appendAllChildren();
+       setNewTimestamp();
 
-on();
+       on();
+   }
+});
 
 function createButtons() {
     createAcceptButton();
@@ -168,6 +174,12 @@ function resetSubIcons() {
         chrome.storage.sync.set({availableSubIcons: subCategoryImages['subCategoryImages']}, function() {
             setupMainCategoryIcon();
         });
+    });
+}
+
+function setNewTimestamp() {
+    chrome.storage.sync.set({'lastShownTimestamp': Date.now().valueOf()}, function() {
+        console.log("New timestamp: " + Date.now());
     });
 }
 

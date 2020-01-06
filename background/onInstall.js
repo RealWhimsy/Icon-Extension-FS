@@ -1,6 +1,6 @@
 
 chrome.runtime.onInstalled.addListener(function() {
-    var mainCategoryImages, subCategoryImages;
+    var mainCategoryImages, subCategoryImages, dummyDate;
 
     mainCategoryImages = {
         "1" : "res/MainCategory/MainCategory_1_edited.png",
@@ -30,6 +30,8 @@ chrome.runtime.onInstalled.addListener(function() {
         "12" : "res/SubCategory/RetentionPeriod_indefinite_icon72.png",
         "13" : "res/SubCategory/RetentionPeriod_limited_icon70.png",
     };
+
+    dummyDate = new Date(2000, 1, 1, 1, 1, 1, 1);
     chrome.storage.sync.set({mainCategoryImages: mainCategoryImages}, function() {
         console.log("I was installed");
     });
@@ -43,6 +45,10 @@ chrome.runtime.onInstalled.addListener(function() {
     });
 
     chrome.storage.sync.set({availableSubIcons: subCategoryImages}, function() {
+
+    });
+
+    chrome.storage.sync.set({'lastShownTimestamp': dummyDate.valueOf()}, function() {
 
     });
 });
