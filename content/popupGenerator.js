@@ -1,6 +1,6 @@
 
 let mainCategoryIcon, subCategoryIcon, overlay, iconContainer, overlayBox, informationText, acceptButton, declineButton,
-    buttonContainer, availableMainIcons, availableSubIcons, lastShownTimestamp;
+    buttonContainer, availableMainIcons, availableSubIcons, lastShownTimestamp, currentMainIcon, currentSubIcon;
 
 let currentTime = Date.now();
 
@@ -9,8 +9,8 @@ chrome.storage.sync.get('lastShownTimestamp', function(result) {
        createOverlay();
        createOverlayBox();
        createIcons();
-       createInformationText();
        createButtons();
+       createInformationText();
        appendAllChildren();
        setNewTimestamp();
 
@@ -46,7 +46,6 @@ function createDeclineButton() {
 
 function createInformationText() {
     informationText = document.createElement('h4');
-    informationText.innerHTML = "Dieses Icon beschreibt absolut gar nichts und ist hier nur zur Demo.";
 }
 
 function createOverlayBox() {
@@ -106,8 +105,9 @@ function setupMainCategoryIcon() {
 function displayMainIcon() {
     getRandomMainIcon();
     setMainIconAsUsed();
+    setIconDescription();
 
-    mainCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentMainIcon));
+    mainCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentMainIcon['imagePath']));
     mainCategoryIcon.setAttribute('id', 'mainCategoryIcon');
 }
 
@@ -157,6 +157,10 @@ function setSubIconAsUsed() {
     });
 }
 
+function setIconDescription() {
+    informationText.innerHTML = currentMainIcon['description'];
+}
+
 function resetMainIcons() {
     let mainCategoryImages;
     chrome.storage.sync.get(['mainCategoryImages'], function(result) {
@@ -176,6 +180,7 @@ function resetSubIcons() {
         });
     });
 }
+
 
 function setNewTimestamp() {
     chrome.storage.sync.set({'lastShownTimestamp': Date.now().valueOf()}, function() {
