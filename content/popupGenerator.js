@@ -4,8 +4,8 @@ let mainCategoryIcon, subCategoryIcon, overlay, iconContainer, overlayBox, infor
 
 let currentTime = Date.now();
 
-chrome.storage.sync.get('lastShownTimestamp', function(result) {
-   if((currentTime - result['lastShownTimestamp']) / 1000 >= 3600) {
+chrome.storage.local.get('lastShownTimestamp', function(result) {
+   // if((currentTime - result['lastShownTimestamp']) / 1000 >= 3600) {
        createOverlay();
        createOverlayBox();
        createIcons();
@@ -15,7 +15,7 @@ chrome.storage.sync.get('lastShownTimestamp', function(result) {
        setNewTimestamp();
 
        on();
-   }
+   // }
 });
 
 function createButtons() {
@@ -79,7 +79,6 @@ function createIcons() {
 
 function setupIcons() {
     setupMainCategoryIcon();
-    setupSubCategoryIcon();
 }
 
 function setupIconContainer() {
@@ -91,7 +90,7 @@ function setupIconContainer() {
 }
 
 function setupMainCategoryIcon() {
-    chrome.storage.sync.get(['availableMainIcons'], function(result) {
+    chrome.storage.local.get(['availableMainIcons'], function(result) {
         availableMainIcons = result['availableMainIcons'];
         console.log(availableMainIcons);
         if(Object.keys(availableMainIcons).length <= 0) {
@@ -105,27 +104,25 @@ function setupMainCategoryIcon() {
 function displayMainIcon() {
     getRandomMainIcon();
     setMainIconAsUsed();
-    setIconDescription();
+    setupSubCategoryIcon();
+
 
     mainCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentMainIcon['imagePath']));
     mainCategoryIcon.setAttribute('id', 'mainCategoryIcon');
 }
 
 function setupSubCategoryIcon() {
-    chrome.storage.sync.get(['availableSubIcons'], function(result) {
-        availableSubIcons = result['availableSubIcons'];
-        if(Object.keys(availableSubIcons).length <= 0) {
-            resetSubIcons();
-        }
+    chrome.storage.local.get(['availableSubIcons'], function(result) {
+        availableSubIcons = currentMainIcon['subcategories'];
         displaySubIcon();
     });
 }
 
 function displaySubIcon() {
     getRandomSubIcon();
-    setSubIconAsUsed();
+    setIconDescription();
 
-    subCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentSubIcon));
+    subCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentSubIcon['imagePath']));
     subCategoryIcon.setAttribute('id', 'subCategoryIcon');
 }
 
@@ -146,26 +143,27 @@ function getRandomSubIcon() {
 }
 
 function setMainIconAsUsed() {
-    chrome.storage.sync.set({availableMainIcons: availableMainIcons}, function() {
+    chrome.storage.local.set({availableMainIcons: availableMainIcons}, function() {
         console.log("deleted chosen main icon");
     });
 }
 
 function setSubIconAsUsed() {
-    chrome.storage.sync.set({availableSubIcons: availableSubIcons}, function() {
+    chrome.storage.local.set({availableSubIcons: availableSubIcons}, function() {
         console.log("deleted chosen sub icon");
     });
 }
 
 function setIconDescription() {
-    informationText.innerHTML = currentMainIcon['description'];
+    let description = "" + currentMainIcon['description'] + "</br></br>" + currentSubIcon['description'];
+    informationText.innerHTML = description;
 }
 
 function resetMainIcons() {
     let mainCategoryImages;
-    chrome.storage.sync.get(['mainCategoryImages'], function(result) {
+    chrome.storage.local.get(['mainCategoryImages'], function(result) {
         mainCategoryImages = result;
-        chrome.storage.sync.set({availableMainIcons: mainCategoryImages['mainCategoryImages']}, function() {
+        chrome.storage.local.set({availableMainIcons: mainCategoryImages['mainCategoryImages']}, function() {
             setupMainCategoryIcon();
         });
     });
@@ -173,9 +171,9 @@ function resetMainIcons() {
 
 function resetSubIcons() {
     let subCategoryImages;
-    chrome.storage.sync.get(['subCategoryImages'], function(result) {
+    chrome.storage.local.get(['subCategoryImages'], function(result) {
         subCategoryImages = result;
-        chrome.storage.sync.set({availableSubIcons: subCategoryImages['subCategoryImages']}, function() {
+        chrome.storage.local.set({availableSubIcons: subCategoryImages['subCategoryImages']}, function() {
             setupMainCategoryIcon();
         });
     });
@@ -183,7 +181,7 @@ function resetSubIcons() {
 
 
 function setNewTimestamp() {
-    chrome.storage.sync.set({'lastShownTimestamp': Date.now().valueOf()}, function() {
+    chrome.storage.local.set({'lastShownTimestamp': Date.now().valueOf()}, function() {
         console.log("New timestamp: " + Date.now());
     });
 }

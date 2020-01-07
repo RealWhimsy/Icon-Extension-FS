@@ -1,7 +1,7 @@
 chrome.runtime.onInstalled.addListener(function () {
-    var subCategoryImages, dummyDate;
+    var mainCategoryImages, subCategoryImages, dummyDate;
 
-    const mainCategoryImages = {
+    mainCategoryImages = {
         "1":
             {
                 "imagePath": "res/MainCategory/MainCategory_1_edited.png",
@@ -238,9 +238,15 @@ chrome.runtime.onInstalled.addListener(function () {
                     {
                         "1":
                             {
-                                "subcategory" : "none",
-                                "imagePath" : "res/SubCategory/no_icon.png",
-                                "description" : ""
+                                "subcategory" : "Retention Period",
+                                "imagePath" : "res/SubCategory/RetentionPeriod_indefinite_icon72.png",
+                                "description" : "Die gesammelten Daten werden auf unbegrenzte Zeit gespeichert."
+                            },
+                        "2":
+                            {
+                                "subcategory" : "Retention Period",
+                                "imagePath" : "res/SubCategory/RetentionPeriod_limited_icon70.png",
+                                "description" : "Die gesammelten Daten werden für begrenzte Zeit gespeichert."
                             }
                     }
             },
@@ -405,23 +411,23 @@ chrome.runtime.onInstalled.addListener(function () {
     };
 
     dummyDate = new Date(2000, 1, 1, 1, 1, 1, 1);
-    chrome.storage.sync.set({mainCategoryImages: mainCategoryImages}, function () {
+    chrome.storage.local.set({mainCategoryImages: mainCategoryImages}, function () {
         console.log("I was installed");
     });
 
-    chrome.storage.sync.set({subCategoryImages: subCategoryImages}, function () {
+    chrome.storage.local.set({subCategoryImages: subCategoryImages}, function () {
 
     });
 
-    chrome.storage.sync.set({availableMainIcons: mainCategoryImages}, function () {
+    chrome.storage.local.set({availableMainIcons: mainCategoryImages}, function () {
 
     });
 
-    chrome.storage.sync.set({availableSubIcons: subCategoryImages}, function () {
+    chrome.storage.local.set({availableSubIcons: subCategoryImages}, function () {
 
     });
 
-    chrome.storage.sync.set({'lastShownTimestamp': dummyDate.valueOf()}, function () {
+    chrome.storage.local.set({'lastShownTimestamp': dummyDate.valueOf()}, function () {
 
     });
 });
