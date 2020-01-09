@@ -5,7 +5,6 @@ let availableMainIcons, availableSubIcons;
 function chooseMainIcon() {
     chrome.storage.local.get(['availableMainIcons'], function(result) {
         availableMainIcons = result['availableMainIcons'];
-        console.log(availableMainIcons);
         if(Object.keys(availableMainIcons).length <= 0) {
             resetMainIcons();
         } else {
@@ -28,7 +27,6 @@ function getRandomSubIcon() {
     randomIndex = randomIndex * Object.keys(availableSubIcons).length;
     randomIndex = Math.floor(randomIndex);
     currentSubIcon = availableSubIcons[Object.keys(availableSubIcons)[randomIndex]];
-    console.log(currentSubIcon);
     delete availableSubIcons[Object.keys(availableSubIcons)[randomIndex]];
 }
 
@@ -37,7 +35,6 @@ function getRandomMainIcon() {
     randomIndex = randomIndex * Object.keys(availableMainIcons).length;
     randomIndex = Math.floor(randomIndex);
     currentMainIcon = availableMainIcons[Object.keys(availableMainIcons)[randomIndex]];
-    console.log(currentMainIcon);
     delete availableMainIcons[Object.keys(availableMainIcons)[randomIndex]];
 }
 
