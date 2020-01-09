@@ -1,50 +1,59 @@
 
-let chosenMainIcons, chosenSubIcons, availableMainIcons, availableSubIcons, hasRun;
-
-let mainIconChosen, subIconChosen = false;
-
-
-chrome.storage.sync.get(['availableMainIcons'], function(result) {
-    console.log(result);
-    availableMainIcons = result;
-});
-
-chrome.storage.sync.get(['availableSubIcons'], function(result) {
-    availableSubIcons = result;
-});
-
-
-checkIfAllIconsAlreadyShown();
-
+let availableMainIcons, availableSubIcons;
 
 
 function chooseMainIcon() {
-    let randomIndex = Math.random();
-    randomIndex = randomIndex * Object.keys(availableMainIcons).length;
-    randomIndex = Math.floor(randomIndex);
-
-    currentMainIcon = availableMainIcons[randomIndex];
-    delete availableMainIcons[randomIndex];
-    chrome.storage.sync.set({availableMainIcons: availableMainIcons}, function() {
-        console.log("deleted chosen main icon");
+    chrome.storage.local.get(['availableMainIcons'], function(result) {
+        availableMainIcons = result['availableMainIcons'];
+        console.log(availableMainIcons);
+        if(Object.keys(availableMainIcons).length <= 0) {
+            resetMainIcons();
+        } else {
+            getRandomMainIcon();
+            displayMainIcon();
+        }
     });
-    mainIconChosen = true;
 }
 
 function chooseSubIcon() {
+    chrome.storage.local.get(['availableSubIcons'], function(result) {
+        availableSubIcons = currentMainIcon['subcategories'];
+        getRandomSubIcon();
+        displaySubIcon();
+    });
+}
+
+function getRandomSubIcon() {
     let randomIndex = Math.random();
     randomIndex = randomIndex * Object.keys(availableSubIcons).length;
     randomIndex = Math.floor(randomIndex);
-
-    currentSubIcon = availableSubIcons[randomIndex];
-    delete availableSubIcons[randomIndex];
-    chrome.storage.sync.set({availableSubIcons: availableSubIcons}, function() {
-        console.log("deleted chosen sub icon");
-    });
-    subIconChosen = true;
+    currentSubIcon = availableSubIcons[Object.keys(availableSubIcons)[randomIndex]];
+    console.log(currentSubIcon);
+    delete availableSubIcons[Object.keys(availableSubIcons)[randomIndex]];
 }
 
+function getRandomMainIcon() {
+    let randomIndex = Math.random();
+    randomIndex = randomIndex * Object.keys(availableMainIcons).length;
+    randomIndex = Math.floor(randomIndex);
+    currentMainIcon = availableMainIcons[Object.keys(availableMainIcons)[randomIndex]];
+    console.log(currentMainIcon);
+    delete availableMainIcons[Object.keys(availableMainIcons)[randomIndex]];
+}
 
-function checkIfAllIconsAlreadyShown() {
+function resetMainIcons() {
+    let mainCategoryImages;
+    chrome.storage.local.get(['mainCategoryImages'], function(result) {
+        mainCategoryImages = result;
+        chrome.storage.local.set({availableMainIcons: mainCategoryImages['mainCategoryImages']}, function() {
+            availableMainIcons = result['availableMainIcons'];
+            chooseMainIcon();
+        });
+    });
+}
 
+function setMainIconAsUsed() {
+    chrome.storage.local.set({availableMainIcons: availableMainIcons}, function() {
+
+    });
 }

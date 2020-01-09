@@ -13,7 +13,7 @@
     {
       "matches": ["https://*/*"],
       "css": ["content/css/styles.css"],
-      "js": ["firebase/firebase-app.js", "firebase/firebase-analytics.js", "firebase/firebase-init.js","jquery/jquery-3.4.1.min.js","content/imageFiller.js", "content/popupGenerator.js", "content/informationLogger.js"]
+      "js": ["content/randomIconGenerator.js", "content/popupGenerator.js", "content/informationLogger.js"]
     }
   ],
   "web_accessible_resources": ["res/MainCategory/*", "res/SubCategory/*"],
