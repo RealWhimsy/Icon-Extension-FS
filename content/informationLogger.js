@@ -10,8 +10,6 @@ function createNewLogEntry(isAccepted) {
                 "reason": reasonInput.value
             };
 
-
-
             console.log(result['iconLog']['logData']);
             result['iconLog']['logData'].push(currentIconLog);
 
