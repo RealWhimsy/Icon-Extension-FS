@@ -13,7 +13,6 @@ chrome.storage.sync.get(['availableSubIcons'], function(result) {
     availableSubIcons = result;
 });
 
-// var currentMainIcon, currentSubIcon;
 
 checkIfAllIconsAlreadyShown();
 

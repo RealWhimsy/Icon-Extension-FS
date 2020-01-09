@@ -31,6 +31,35 @@
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    font-family: 'Lato', Helvetica, sans-serif;
+}
+
+.fs-button {
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#reason-input {
+    width: 100%;
+    text-align: center;
+}
+
+.empty-input-warning::-webkit-input-placeholder {
+    color: red;
+    font-weight: bold;
+}
+
+#accept-button {
+    background-color: #4aff7a;
+}
+
+#decline-button {
+    background-color: #f04349;
 }
 
 .fs-button {

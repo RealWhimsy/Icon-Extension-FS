@@ -13,11 +13,10 @@
     {
       "matches": ["https://*/*"],
       "css": ["content/css/styles.css"],
-      "js": ["jquery/jquery-3.4.1.min.js","content/imageFiller.js", "content/popupGenerator.js"]
+      "js": ["firebase/firebase-app.js", "firebase/firebase-analytics.js", "firebase/firebase-init.js","jquery/jquery-3.4.1.min.js","content/imageFiller.js", "content/popupGenerator.js", "content/informationLogger.js"]
     }
   ],
   "web_accessible_resources": ["res/MainCategory/*", "res/SubCategory/*"],
   "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com  https://*.googletagmanager.com/; object-src 'self'; connect-src 'self' wss://*.firebaseio.com;",
-  "unsafe-inline": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com",
   "manifest_version": 2
 }

@@ -1,9 +1,10 @@
 chrome.runtime.onInstalled.addListener(function () {
-    var mainCategoryImages, subCategoryImages, dummyDate;
+    var mainCategoryImages, subCategoryImages, dummyDate, iconLog;
 
     mainCategoryImages = {
         "1":
             {
+                "categoryNumber" : 1,
                 "imagePath": "res/MainCategory/MainCategory_1_edited.png",
                 "description": "Sammeln/Nutzung durch Serviceanbieter: Wie und warum der Serviceanbieter Nutzerinformationen sammelt.",
                 "subcategories":
@@ -84,6 +85,7 @@ chrome.runtime.onInstalled.addListener(function () {
             },
         "2":
             {
+                "categoryNumber" : 2,
                 "imagePath": "res/MainCategory/MainCategory_2_edited.png",
                 "description": "Teilen mit/Sammeln durch Drittparteien: Wie Nutzerinformationen mit Drittparteien geteilt oder gesammelt werden.",
                 "subcategories":
@@ -158,6 +160,7 @@ chrome.runtime.onInstalled.addListener(function () {
             },
         "3":
             {
+                "categoryNumber" : 3,
                 "imagePath": "res/MainCategory/MainCategory_3_edited.png",
                 "description": "Nutzerentscheidungen und -kontrolle: Entscheidungsmöglichkeiten und Optionen, die den Nutzern zur Verfügung stehen.",
                 "subcategories":
@@ -232,6 +235,7 @@ chrome.runtime.onInstalled.addListener(function () {
             },
         "4":
             {
+                "categoryNumber" : 4,
                 "imagePath": "res/MainCategory/MainCategory_4_edited.png",
                 "description": "Aufbewahrung von Daten: Wie lange Nutzerinformation gespeichert wird.",
                 "subcategories":
@@ -252,6 +256,7 @@ chrome.runtime.onInstalled.addListener(function () {
             },
         "5":
             {
+                "categoryNumber" : 5,
                 "imagePath": "res/MainCategory/MainCategory_5_edited.png",
                 "description": "Aufbewahrung von Daten: Wie lange Nutzerinformation gespeichert wird.",
                 "subcategories":
@@ -338,6 +343,7 @@ chrome.runtime.onInstalled.addListener(function () {
             },
         "6":
             {
+                "categoryNumber" : 6,
                 "imagePath": "res/MainCategory/MainCategory_6_edited.png",
                 "description": "Datensicherheit: Wie Nutzerinformation geschützt wird.",
                 "subcategories":
@@ -352,6 +358,7 @@ chrome.runtime.onInstalled.addListener(function () {
             },
         "7":
             {
+                "categoryNumber" : 7,
                 "imagePath": "res/MainCategory/MainCategory_7_edited.png",
                 "description": "Richtlinienänderung: In welchem Rahmen werden Änderungen an der Richtline stattfinden",
                 "subcategories":
@@ -366,6 +373,7 @@ chrome.runtime.onInstalled.addListener(function () {
             },
         "8":
             {
+                "categoryNumber" : 8,
                 "imagePath": "res/MainCategory/MainCategory_8_edited.png",
                 "description": "Mitverfolgung persönlicher Daten: Wird der Verzicht auf Mitverfolgung von persönlichen Daten erwähnt",
                 "subcategories":
@@ -380,6 +388,7 @@ chrome.runtime.onInstalled.addListener(function () {
             },
         "9":
             {
+                "categoryNumber" : 9,
                 "imagePath": "res/MainCategory/MainCategory_9_edited.png",
                 "description": "Datenreichweite: In welchen Ländern und Regionen werden die gesammelten Daten verarbeitet oder weitergeleitet",
                 "subcategories":
@@ -410,6 +419,8 @@ chrome.runtime.onInstalled.addListener(function () {
         "13": "res/SubCategory/RetentionPeriod_limited_icon70.png",
     };
 
+    iconLog = {"logData" : [{}]};
+
     dummyDate = new Date(2000, 1, 1, 1, 1, 1, 1);
     chrome.storage.local.set({mainCategoryImages: mainCategoryImages}, function () {
         console.log("I was installed");
@@ -428,6 +439,10 @@ chrome.runtime.onInstalled.addListener(function () {
     });
 
     chrome.storage.local.set({'lastShownTimestamp': dummyDate.valueOf()}, function () {
+
+    });
+
+    chrome.storage.local.set({'iconLog': iconLog}, function () {
 
     });
 });

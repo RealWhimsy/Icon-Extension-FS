@@ -1,6 +1,6 @@
 
 let mainCategoryIcon, subCategoryIcon, overlay, iconContainer, overlayBox, informationText, acceptButton, declineButton,
-    buttonContainer, availableMainIcons, availableSubIcons, lastShownTimestamp, currentMainIcon, currentSubIcon;
+    buttonContainer, availableMainIcons, availableSubIcons, lastShownTimestamp, currentMainIcon, currentSubIcon, reasonInput;
 
 let currentTime = Date.now();
 
@@ -11,12 +11,21 @@ chrome.storage.local.get('lastShownTimestamp', function(result) {
        createIcons();
        createButtons();
        createInformationText();
+       createInputField();
        appendAllChildren();
        setNewTimestamp();
 
        on();
    }
 });
+
+function createInputField() {
+    reasonInput = document.createElement('input');
+    reasonInput.setAttribute('type', 'text');
+    reasonInput.setAttribute('id', 'reason-input');
+    reasonInput.setAttribute('placeholder', 'Bitte Grund für ihre Auswahl eingeben');
+
+}
 
 function createButtons() {
     createAcceptButton();
@@ -35,13 +44,21 @@ function createButtonContainer() {
 function createAcceptButton() {
     acceptButton = document.createElement('button');
     acceptButton.innerHTML = "Accept";
+    acceptButton.setAttribute('id', 'accept-button');
     acceptButton.classList.add('fs-button');
+    acceptButton.addEventListener('click', function () {
+        createNewLogEntry(true);
+    });
 }
 
 function createDeclineButton() {
     declineButton = document.createElement('button');
     declineButton.innerHTML = "Decline";
+    declineButton.setAttribute('id', 'decline-button');
     declineButton.classList.add('fs-button');
+    declineButton.addEventListener('click', function () {
+        createNewLogEntry(false);
+    });
 }
 
 function createInformationText() {
@@ -58,15 +75,13 @@ function appendAllChildren() {
     overlayBox.appendChild(iconContainer);
     overlayBox.appendChild(informationText);
     overlayBox.appendChild(buttonContainer);
+    overlayBox.appendChild(reasonInput);
     document.body.appendChild(overlay);
 }
 
 function createOverlay() {
     overlay = document.createElement('overlay');
     overlay.setAttribute('id', 'overlay');
-    overlay.addEventListener('click', function () {
-        off()
-    });
     overlay.classList.add('row');
 }
 
@@ -92,7 +107,6 @@ function setupIconContainer() {
 function setupMainCategoryIcon() {
     chrome.storage.local.get(['availableMainIcons'], function(result) {
         availableMainIcons = result['availableMainIcons'];
-        console.log(availableMainIcons);
         if(Object.keys(availableMainIcons).length <= 0) {
             resetMainIcons();
         }
@@ -131,6 +145,7 @@ function getRandomMainIcon() {
     randomIndex = randomIndex * Object.keys(availableMainIcons).length;
     randomIndex = Math.floor(randomIndex);
     currentMainIcon = availableMainIcons[Object.keys(availableMainIcons)[randomIndex]];
+    console.log(currentMainIcon);
     delete availableMainIcons[Object.keys(availableMainIcons)[randomIndex]];
 }
 
@@ -139,18 +154,19 @@ function getRandomSubIcon() {
     randomIndex = randomIndex * Object.keys(availableSubIcons).length;
     randomIndex = Math.floor(randomIndex);
     currentSubIcon = availableSubIcons[Object.keys(availableSubIcons)[randomIndex]];
+    console.log(currentSubIcon);
     delete availableSubIcons[Object.keys(availableSubIcons)[randomIndex]];
 }
 
 function setMainIconAsUsed() {
     chrome.storage.local.set({availableMainIcons: availableMainIcons}, function() {
-        console.log("deleted chosen main icon");
+
     });
 }
 
 function setSubIconAsUsed() {
     chrome.storage.local.set({availableSubIcons: availableSubIcons}, function() {
-        console.log("deleted chosen sub icon");
+
     });
 }
 
