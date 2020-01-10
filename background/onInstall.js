@@ -6,7 +6,7 @@ chrome.runtime.onInstalled.addListener(function () {
             {
                 "categoryNumber" : 1,
                 "imagePath": "res/MainCategory/MainCategory_1_edited.png",
-                "description": "Sammeln/Nutzung durch Serviceanbieter: Wie und warum der Serviceanbieter Nutzerinformationen sammelt.",
+                "description": "Wir sammeln und nutzen Daten über Dich.",
                 "subcategories":
                     {
                         "1":
@@ -19,67 +19,67 @@ chrome.runtime.onInstalled.addListener(function () {
                             {
                                 "subcategory" : "Personal Information Type",
                                 "imagePath" : "res/SubCategory/PIT_ComputerInformation_icon74.png",
-                                "description" : "Der Typ des Betriebssystems oder des Webbrowsers, den der Benutzer verwendet, oder ähnliche Computer- oder Geräteinformationen."
+                                "description" : "Es werden gerätespezifische Informationen, wie z.B. Ihr Hardwaremodell, die Betriebssystemversion, eindeutige Gerätekennungen und Informationen zum Mobilfunknetz, einschließlich der Telefonnummer, gesammelt."
                             },
                         "3":
                             {
                                 "subcategory" : "Personal Information Type",
                                 "imagePath" : "res/SubCategory/PIT_contact_icon44.png",
-                                "description" : "Kontaktinformationen wie Name, E-Mail-Adresse, Telefonnummer, Straße usw."
+                                "description" : "Es werden Kontaktinformationen gesammelt. Zum Beispiel Ihr Name und Ihre Adresse. Möglicherweise auch Ihre Telefonnummer oder E-Mail-Adresse."
                             },
                         "4":
                             {
                                 "subcategory" : "Personal Information Type",
                                 "imagePath" : "res/SubCategory/PIT_cookies_tracking_icon52.png",
-                                "description" : "Identifikatoren, die vom Unternehmen oder von Dritten lokal auf dem Gerät des Benutzers gespeichert werden, einschließlich Cookies, Beacons oder Ähnlichem, die häufig zur eindeutigen Identifizierung von Benutzern verwendet werden, jedoch nicht für den Verbindungsaufbau mit dem Gerät des Benutzers oder die Bereitstellung eines Dienstes erforderlich sind."
+                                "description" : "Cookies werden beispielsweise verwendet, um eine eindeutige Identifikationsnummer zu speichern, die an Ihren Computer oder Ihr Gerät gebunden ist, damit Sie über mehreren Browsersitzungen und über mehrere Websites hinweg als derselbe Benutzer erkannt werden."
                             },
                         "5":
                             {
                                 "subcategory" : "Personal Information Type",
                                 "imagePath" : "res/SubCategory/PIT_financial_icon9.png",
-                                "description" : "Es werden finanzielle Information gesammelt, z.B. Kredit-/Debitkartendaten, andere Zahlungsinformationen, Bonitätsbewertungen etc. "
+                                "description" : "Es werden Zahlungs- und Rechnungsinformationen gespeichert. Es werden auch Kreditinformationen von Kreditbüros geesammelt, die verwendet werden, um Betrug zu verhindern und aufzudecken und um bestimmte Kredit- oder Finanzdienstleistungen anzubieten."
                             },
                         "6":
                             {
                                 "subcategory" : "Personal Information Type",
                                 "imagePath" : "res/SubCategory/PIT_health_icon22.png",
-                                "description" : "Es werden gesundheitsbezogene Daten gesammelt, z.B. Informationen zum Gesundheitszustand, Verschreibungen, medikamentöser Behandlung, sowie Daten aus der Gesundheitsüberwachung, wie Herzrate, Schrittzahlen, Aktivitätsgrad etc."
+                                "description" : "Es werden medizinische Informationen gesammelt, wie Ihre Krankengeschichte, gegenwärtige Symptome, zukünftige Zustände oder Behandlungen, oder irgendwelche anderen medizinische oder gesundheitsrelevanten-Informationen, die Sie oder Ihr Krankenversicherer teilen."
                             },
                         "7":
                             {
                                 "subcategory" : "Personal Information Type",
                                 "imagePath" : "res/SubCategory/PIT_IP_icon30.png",
-                                "description" : "Es werden z.B. permanente Identifikatoren wie Geräte-Ids oder MAC-Adresse, oder vorübergehende Identifikatoren wie die IP-Adresse gesammelt, die benötigt werden, um eine Verbindung für die aktuelle Internetsitzung herzustellen."
+                                "description" : "Es werden Ihre Gerätekennung oder IP-Adresse erfasst, wenn Sie unsere Websites besuchen, unsere Anwendungen auf Websites oder Plattformen von Drittanbietern verwenden oder von uns gesendete E-Mails öffnen."
                             },
                         "8":
                             {
                                 "subcategory" : "Personal Information Type",
                                 "imagePath" : "res/SubCategory/PIT_location_icon29.png",
-                                "description" : "Es werden ortsbezogene Daten gesammelt (z.B. die aktuelle Position des Nutzers), die von unterschiedlicher Granularität sein können, d.h. es könnte sich um die exakte Positon handeln, die Postleitzahl, oder auf Stadtebene. "
+                                "description" : "Es werden Informationen über Ihren tatsächlichen Standort erfasst und verarbeitet. Es werden verschiedene Technologien zur Standortbestimmung benutzt, darunter die IP-Adresse, GPS und andere Sensoren, mit denen beispielsweise Informationen zu in der Nähe befindlichen Geräten, WLAN-Zugangspunkten und Mobilfunkmasten erfasst werden."
                             },
                         "9":
                             {
                                 "subcategory" : "Personal Information Type",
                                 "imagePath" : "res/SubCategory/PIT_UserOnlineActivities_icon75.png",
-                                "description" : "Es werden Daten zu den Aktivitäten des Nutzers im Internet, auf einer Webseite oder App gesammelt, z.B. die Seiten, die besucht wurden, die Zeit, die auf diesen Seiten verbracht wurde, Online-Nutzerverhalten im allgemeinen etc."
+                                "description" : "Bestimmte Informationen werden automatisch erfasst und in Serverprotokollen gespeichert. Dies beinhaltet: Details darüber, wie Sie unseren Service genutzt haben, wie z. B. Ihre Suchanfragen, die Zeit, die sie auf der Seite verbringen, die Seiten, die sie besuchen, Mausbewegungen und Klicks, usw."
                             },
                         "10":
                             {
                                 "subcategory" : "Purpose",
                                 "imagePath" : "res/SubCategory/purpose_ads_icon1.png",
-                                "description" : "Es werden finanzielle Information gesammelt, z.B. Kredit-/Debitkartendaten, andere Zahlungsinformationen, Bonitätsbewertungen etc. "
+                                "description" : "Diese Informationen werden verwendet, um Ihnen maßgeschneiderte Inhalte anzubieten - beispielsweise auf Sie zugeschnittene Anzeigen und Werbung."
                             },
                         "11":
                             {
                                 "subcategory" : "Purpose",
                                 "imagePath" : "res/SubCategory/purpose_analytics_icon13.png",
-                                "description" : "Die gesammelten Daten werden analytisch ausgewertet, z.B. um Nutzungs- und Zugriffsstatistiken von bestimmten Platformen zu erstellen."
+                                "description" : "Die gesammelten Infomrationen wie demographische Daten, Interessen und Verhaltenesweisen, werden für Forschungs- und Analysezwecke genutzt, um Nutzer besser zu verstehen und die Produkte und Dienstleistungen zu verbessern."
                             },
                         "12":
                             {
                                 "subcategory" : "Purpose",
                                 "imagePath" : "res/SubCategory/purpose_legal_icon3.png",
-                                "description" : "Die gesammelten Daten werden gegebenenfalls an die Legislative weitergegeben."
+                                "description" : "Persönliche Daten werden im notwendingen und angemessenen Rahmen verwendet, um die Rechte, die Privatsphäre, die Sicherheit oder das Eigentum des Dienstes, seiner Mitarbeiter oder Vertreter oder anderer Benutzer zu schützen und um geltendes Recht einzuhalten."
                             }
                     }
             },
@@ -87,7 +87,7 @@ chrome.runtime.onInstalled.addListener(function () {
             {
                 "categoryNumber" : 2,
                 "imagePath": "res/MainCategory/MainCategory_2_edited.png",
-                "description": "Teilen mit/Sammeln durch Drittparteien: Wie Nutzerinformationen mit Drittparteien geteilt oder gesammelt werden.",
+                "description": "Einige der Inhalte, Werbung und Funktionen unseres Dienstes können von Dritten bereitgestellt werden, z.B. von unseren Werbetreibenden. Diese Dritten können bestimmte Informationen über Ihre Nutzung der Dienste sammeln oder erhalten.",
                 "subcategories":
                     {
                         "1":
@@ -258,7 +258,7 @@ chrome.runtime.onInstalled.addListener(function () {
             {
                 "categoryNumber" : 5,
                 "imagePath": "res/MainCategory/MainCategory_5_edited.png",
-                "description": "Aufbewahrung von Daten: Wie lange Nutzerinformation gespeichert wird.",
+                "description": "Es werden alle Information, die Sie auf unserer Website eingeben oder uns auf andere Weise mitteilen, gespeichert. Solange es notwendig ist oder auch länger, wenn dies vom Gesetz erlaubt oder verlangt wird.",
                 "subcategories":
                     {
                         "1":
