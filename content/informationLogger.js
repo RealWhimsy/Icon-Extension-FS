@@ -5,6 +5,7 @@ function createNewLogEntry(isAccepted) {
             let currentIconLog = {
                 "categoryNumber": currentMainIcon['categoryNumber'],
                 "subcategory": currentSubIcon['subcategory'],
+                "subcategoryValue": currentSubIcon['subcategoryValue'],
                 "timestamp": Date.now(),
                 "accepted": isAccepted,
                 "reason": reasonInput.value
