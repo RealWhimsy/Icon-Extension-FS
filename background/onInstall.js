@@ -12,66 +12,77 @@ chrome.runtime.onInstalled.addListener(function () {
                         "1":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Computer Information",
                                 "imagePath" : "res/SubCategory/PIT_ComputerInformation_icon74.png",
                                 "description" : "Es werden gerätespezifische Informationen, wie z.B. Ihr Hardwaremodell, die Betriebssystemversion, eindeutige Gerätekennungen und Informationen zum Mobilfunknetz, einschließlich der Telefonnummer, gesammelt."
                             },
                         "2":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Contact Information",
                                 "imagePath" : "res/SubCategory/PIT_contact_icon44.png",
                                 "description" : "Es werden Kontaktinformationen gesammelt. Zum Beispiel Ihr Name und Ihre Adresse. Möglicherweise auch Ihre Telefonnummer oder E-Mail-Adresse."
                             },
                         "3":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Cookies",
                                 "imagePath" : "res/SubCategory/PIT_cookies_tracking_icon52.png",
                                 "description" : "Cookies werden beispielsweise verwendet, um eine eindeutige Identifikationsnummer zu speichern, die an Ihren Computer oder Ihr Gerät gebunden ist, damit Sie über mehreren Browsersitzungen und über mehrere Websites hinweg als derselbe Benutzer erkannt werden."
                             },
                         "4":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Payment Information",
                                 "imagePath" : "res/SubCategory/PIT_financial_icon9.png",
                                 "description" : "Es werden Zahlungs- und Rechnungsinformationen gespeichert. Es werden auch Kreditinformationen von Kreditbüros geesammelt, die verwendet werden, um Betrug zu verhindern und aufzudecken und um bestimmte Kredit- oder Finanzdienstleistungen anzubieten."
                             },
                         "5":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Health Information",
                                 "imagePath" : "res/SubCategory/PIT_health_icon22.png",
                                 "description" : "Es werden medizinische Informationen gesammelt, wie Ihre Krankengeschichte, gegenwärtige Symptome, zukünftige Zustände oder Behandlungen, oder irgendwelche anderen medizinische oder gesundheitsrelevanten-Informationen, die Sie oder Ihr Krankenversicherer teilen."
                             },
                         "6":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "IP and Device",
                                 "imagePath" : "res/SubCategory/PIT_IP_icon30.png",
                                 "description" : "Es werden Ihre Gerätekennung oder IP-Adresse erfasst, wenn Sie unsere Websites besuchen, unsere Anwendungen auf Websites oder Plattformen von Drittanbietern verwenden oder von uns gesendete E-Mails öffnen."
                             },
                         "7":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Location Data",
                                 "imagePath" : "res/SubCategory/PIT_location_icon29.png",
                                 "description" : "Es werden Informationen über Ihren tatsächlichen Standort erfasst und verarbeitet. Es werden verschiedene Technologien zur Standortbestimmung benutzt, darunter die IP-Adresse, GPS und andere Sensoren, mit denen beispielsweise Informationen zu in der Nähe befindlichen Geräten, WLAN-Zugangspunkten und Mobilfunkmasten erfasst werden."
                             },
                         "8":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "User Activity",
                                 "imagePath" : "res/SubCategory/PIT_UserOnlineActivities_icon75.png",
                                 "description" : "Bestimmte Informationen werden automatisch erfasst und in Serverprotokollen gespeichert. Dies beinhaltet: Details darüber, wie Sie unseren Service genutzt haben, wie z. B. Ihre Suchanfragen, die Zeit, die sie auf der Seite verbringen, die Seiten, die sie besuchen, Mausbewegungen und Klicks, usw."
                             },
                         "9":
                             {
                                 "subcategory" : "Purpose",
+                                "subcategoryValue" : "Ads",
                                 "imagePath" : "res/SubCategory/purpose_ads_icon1.png",
                                 "description" : "Diese Informationen werden verwendet, um Ihnen maßgeschneiderte Inhalte anzubieten - beispielsweise auf Sie zugeschnittene Anzeigen und Werbung."
                             },
                         "10":
                             {
                                 "subcategory" : "Purpose",
+                                "subcategoryValue" : "Analytics",
                                 "imagePath" : "res/SubCategory/purpose_analytics_icon13.png",
                                 "description" : "Die gesammelten Informationen wie demographische Daten, Interessen und Verhaltenesweisen, werden für Forschungs- und Analysezwecke genutzt, um Nutzer besser zu verstehen und die Produkte und Dienstleistungen zu verbessern."
                             },
                         "11":
                             {
                                 "subcategory" : "Purpose",
+                                "subcategoryValue" : "Legal",
                                 "imagePath" : "res/SubCategory/purpose_legal_icon3.png",
                                 "description" : "Persönliche Daten werden im notwendingen und angemessenen Rahmen verwendet, um die Rechte, die Privatsphäre, die Sicherheit oder das Eigentum des Dienstes, seiner Mitarbeiter oder Vertreter oder anderer Benutzer zu schützen und um geltendes Recht einzuhalten."
                             }
@@ -87,68 +98,79 @@ chrome.runtime.onInstalled.addListener(function () {
                         "1":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Computer Information",
                                 "imagePath" : "res/SubCategory/PIT_ComputerInformation_icon74.png",
-                                "description" : "Es werden gerätespezifische Informationen, wie z.B. Ihr Hardwaremodell, die Betriebssystemversion, eindeutige Gerätekennungen und Informationen zum Mobilfunknetz, einschließlich der Telefonnummer, gesammelt und an Dritte weitergegeben."
+                                "description" : "Es werden gerätespezifische Informationen, wie z.B. Ihr Hardwaremodell, die Betriebssystemversion, eindeutige Gerätekennungen und Informationen zum Mobilfunknetz, einschließlich der Telefonnummer, gesammelt."
                             },
                         "2":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Contact Information",
                                 "imagePath" : "res/SubCategory/PIT_contact_icon44.png",
-                                "description" : "Es werden Kontaktinformationen gesammelt und weitergegeben. Zum Beispiel Ihr Name und Ihre Adresse. Möglicherweise auch Ihre Telefonnummer oder E-Mail-Adresse."
+                                "description" : "Es werden Kontaktinformationen gesammelt. Zum Beispiel Ihr Name und Ihre Adresse. Möglicherweise auch Ihre Telefonnummer oder E-Mail-Adresse."
                             },
                         "3":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Cookies",
                                 "imagePath" : "res/SubCategory/PIT_cookies_tracking_icon52.png",
                                 "description" : "Cookies werden beispielsweise verwendet, um eine eindeutige Identifikationsnummer zu speichern, die an Ihren Computer oder Ihr Gerät gebunden ist, damit Sie über mehreren Browsersitzungen und über mehrere Websites hinweg als derselbe Benutzer erkannt werden."
                             },
                         "4":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Payment Information",
                                 "imagePath" : "res/SubCategory/PIT_financial_icon9.png",
-                                "description" : "Es werden Zahlungs- und Rechnungsinformationen gespeichert und weitergegeben. Es werden auch Kreditinformationen von Kreditbüros geesammelt, die verwendet werden, um Betrug zu verhindern und aufzudecken und um bestimmte Kredit- oder Finanzdienstleistungen anzubieten."
+                                "description" : "Es werden Zahlungs- und Rechnungsinformationen gespeichert. Es werden auch Kreditinformationen von Kreditbüros geesammelt, die verwendet werden, um Betrug zu verhindern und aufzudecken und um bestimmte Kredit- oder Finanzdienstleistungen anzubieten."
                             },
                         "5":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Health Information",
                                 "imagePath" : "res/SubCategory/PIT_health_icon22.png",
-                                "description" : "Es werden medizinische Informationen gesammelt und weitergegeben, wie Ihre Krankengeschichte, gegenwärtige Symptome, zukünftige Zustände oder Behandlungen, oder irgendwelche anderen medizinische oder gesundheitsrelevanten-Informationen, die Sie oder Ihr Krankenversicherer teilen."
+                                "description" : "Es werden medizinische Informationen gesammelt, wie Ihre Krankengeschichte, gegenwärtige Symptome, zukünftige Zustände oder Behandlungen, oder irgendwelche anderen medizinische oder gesundheitsrelevanten-Informationen, die Sie oder Ihr Krankenversicherer teilen."
                             },
                         "6":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "IP and Device",
                                 "imagePath" : "res/SubCategory/PIT_IP_icon30.png",
-                                "description" : "Es werden Ihre Gerätekennung oder IP-Adresse erfasst und weitergegeben, wenn Sie unsere Websites besuchen, unsere Anwendungen auf Websites oder Plattformen von Drittanbietern verwenden oder von uns gesendete E-Mails öffnen."
+                                "description" : "Es werden Ihre Gerätekennung oder IP-Adresse erfasst, wenn Sie unsere Websites besuchen, unsere Anwendungen auf Websites oder Plattformen von Drittanbietern verwenden oder von uns gesendete E-Mails öffnen."
                             },
                         "7":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Location Data",
                                 "imagePath" : "res/SubCategory/PIT_location_icon29.png",
-                                "description" : "Es werden Informationen über Ihren tatsächlichen Standort erfasst, verarbeitet und weitergegeben. Es werden verschiedene Technologien zur Standortbestimmung benutzt, darunter die IP-Adresse, GPS und andere Sensoren, mit denen beispielsweise Informationen zu in der Nähe befindlichen Geräten, WLAN-Zugangspunkten und Mobilfunkmasten erfasst werden."
+                                "description" : "Es werden Informationen über Ihren tatsächlichen Standort erfasst und verarbeitet. Es werden verschiedene Technologien zur Standortbestimmung benutzt, darunter die IP-Adresse, GPS und andere Sensoren, mit denen beispielsweise Informationen zu in der Nähe befindlichen Geräten, WLAN-Zugangspunkten und Mobilfunkmasten erfasst werden."
                             },
                         "8":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "User Activity",
                                 "imagePath" : "res/SubCategory/PIT_UserOnlineActivities_icon75.png",
-                                "description" : "Bestimmte Informationen werden automatisch erfasst und in Serverprotokollen gespeichert und weitergegeben. Dies beinhaltet: Details darüber, wie Sie unseren Service genutzt haben, wie z. B. Ihre Suchanfragen, die Zeit, die sie auf der Seite verbringen, die Seiten, die sie besuchen, Mausbewegungen und Klicks, usw."
+                                "description" : "Bestimmte Informationen werden automatisch erfasst und in Serverprotokollen gespeichert. Dies beinhaltet: Details darüber, wie Sie unseren Service genutzt haben, wie z. B. Ihre Suchanfragen, die Zeit, die sie auf der Seite verbringen, die Seiten, die sie besuchen, Mausbewegungen und Klicks, usw."
                             },
                         "9":
                             {
                                 "subcategory" : "Purpose",
+                                "subcategoryValue" : "Ads",
                                 "imagePath" : "res/SubCategory/purpose_ads_icon1.png",
-                                "description" : "Diese Informationen werden verwendet und weitergegeben, um Ihnen maßgeschneiderte Inhalte anzubieten - beispielsweise auf Sie zugeschnittene Anzeigen und Werbung."
+                                "description" : "Diese Informationen werden verwendet, um Ihnen maßgeschneiderte Inhalte anzubieten - beispielsweise auf Sie zugeschnittene Anzeigen und Werbung."
                             },
                         "10":
                             {
                                 "subcategory" : "Purpose",
+                                "subcategoryValue" : "Analytics",
                                 "imagePath" : "res/SubCategory/purpose_analytics_icon13.png",
-                                "description" : "Die gesammelten Informationen wie demographische Daten, Interessen und Verhaltenesweisen, werden für Forschungs- und Analysezwecke weitergegeben, um Nutzer besser zu verstehen und die Produkte und Dienstleistungen zu verbessern."
+                                "description" : "Die gesammelten Informationen wie demographische Daten, Interessen und Verhaltenesweisen, werden für Forschungs- und Analysezwecke genutzt, um Nutzer besser zu verstehen und die Produkte und Dienstleistungen zu verbessern."
                             },
                         "11":
                             {
                                 "subcategory" : "Purpose",
+                                "subcategoryValue" : "Legal",
                                 "imagePath" : "res/SubCategory/purpose_legal_icon3.png",
-                                "description" : "Persönliche Daten werden im notwendingen und angemessenen Rahmen verwendet und weitergegeben, um die Rechte, die Privatsphäre, die Sicherheit oder das Eigentum des Dienstes, seiner Mitarbeiter oder Vertreter oder anderer Benutzer zu schützen und um geltendes Recht einzuhalten."
+                                "description" : "Persönliche Daten werden im notwendingen und angemessenen Rahmen verwendet, um die Rechte, die Privatsphäre, die Sicherheit oder das Eigentum des Dienstes, seiner Mitarbeiter oder Vertreter oder anderer Benutzer zu schützen und um geltendes Recht einzuhalten."
                             }
                     }
             },
@@ -162,68 +184,79 @@ chrome.runtime.onInstalled.addListener(function () {
                         "1":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Computer Information",
                                 "imagePath" : "res/SubCategory/PIT_ComputerInformation_icon74.png",
-                                "description" : "Es werden gerätespezifische Informationen, wie z.B. Ihr Hardwaremodell, die Betriebssystemversion, eindeutige Gerätekennungen und Informationen zum Mobilfunknetz, einschließlich der Telefonnummer, gespeichert."
+                                "description" : "Es werden gerätespezifische Informationen, wie z.B. Ihr Hardwaremodell, die Betriebssystemversion, eindeutige Gerätekennungen und Informationen zum Mobilfunknetz, einschließlich der Telefonnummer, gesammelt."
                             },
                         "2":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Contact Information",
                                 "imagePath" : "res/SubCategory/PIT_contact_icon44.png",
-                                "description" : "Es werden Kontaktinformationen gespeichert. Zum Beispiel Ihr Name und Ihre Adresse. Möglicherweise auch Ihre Telefonnummer oder E-Mail-Adresse."
+                                "description" : "Es werden Kontaktinformationen gesammelt. Zum Beispiel Ihr Name und Ihre Adresse. Möglicherweise auch Ihre Telefonnummer oder E-Mail-Adresse."
                             },
                         "3":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Cookies",
                                 "imagePath" : "res/SubCategory/PIT_cookies_tracking_icon52.png",
                                 "description" : "Cookies werden beispielsweise verwendet, um eine eindeutige Identifikationsnummer zu speichern, die an Ihren Computer oder Ihr Gerät gebunden ist, damit Sie über mehreren Browsersitzungen und über mehrere Websites hinweg als derselbe Benutzer erkannt werden."
                             },
                         "4":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Payment Information",
                                 "imagePath" : "res/SubCategory/PIT_financial_icon9.png",
                                 "description" : "Es werden Zahlungs- und Rechnungsinformationen gespeichert. Es werden auch Kreditinformationen von Kreditbüros geesammelt, die verwendet werden, um Betrug zu verhindern und aufzudecken und um bestimmte Kredit- oder Finanzdienstleistungen anzubieten."
                             },
                         "5":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Health Information",
                                 "imagePath" : "res/SubCategory/PIT_health_icon22.png",
-                                "description" : "Es werden medizinische Informationen gespeichert, wie Ihre Krankengeschichte, gegenwärtige Symptome, zukünftige Zustände oder Behandlungen, oder irgendwelche anderen medizinische oder gesundheitsrelevanten-Informationen, die Sie oder Ihr Krankenversicherer teilen."
+                                "description" : "Es werden medizinische Informationen gesammelt, wie Ihre Krankengeschichte, gegenwärtige Symptome, zukünftige Zustände oder Behandlungen, oder irgendwelche anderen medizinische oder gesundheitsrelevanten-Informationen, die Sie oder Ihr Krankenversicherer teilen."
                             },
                         "6":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "IP and Device",
                                 "imagePath" : "res/SubCategory/PIT_IP_icon30.png",
-                                "description" : "Es werden Ihre Gerätekennung oder IP-Adresse gespeichert, wenn Sie unsere Websites besuchen, unsere Anwendungen auf Websites oder Plattformen von Drittanbietern verwenden oder von uns gesendete E-Mails öffnen."
+                                "description" : "Es werden Ihre Gerätekennung oder IP-Adresse erfasst, wenn Sie unsere Websites besuchen, unsere Anwendungen auf Websites oder Plattformen von Drittanbietern verwenden oder von uns gesendete E-Mails öffnen."
                             },
                         "7":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "Location Data",
                                 "imagePath" : "res/SubCategory/PIT_location_icon29.png",
-                                "description" : "Es werden Informationen über Ihren tatsächlichen Standort erfasst, verarbeitet und gespeichert. Es werden verschiedene Technologien zur Standortbestimmung benutzt, darunter die IP-Adresse, GPS und andere Sensoren, mit denen beispielsweise Informationen zu in der Nähe befindlichen Geräten, WLAN-Zugangspunkten und Mobilfunkmasten erfasst werden."
+                                "description" : "Es werden Informationen über Ihren tatsächlichen Standort erfasst und verarbeitet. Es werden verschiedene Technologien zur Standortbestimmung benutzt, darunter die IP-Adresse, GPS und andere Sensoren, mit denen beispielsweise Informationen zu in der Nähe befindlichen Geräten, WLAN-Zugangspunkten und Mobilfunkmasten erfasst werden."
                             },
                         "8":
                             {
                                 "subcategory" : "Personal Information Type",
+                                "subcategoryValue" : "User Activity",
                                 "imagePath" : "res/SubCategory/PIT_UserOnlineActivities_icon75.png",
                                 "description" : "Bestimmte Informationen werden automatisch erfasst und in Serverprotokollen gespeichert. Dies beinhaltet: Details darüber, wie Sie unseren Service genutzt haben, wie z. B. Ihre Suchanfragen, die Zeit, die sie auf der Seite verbringen, die Seiten, die sie besuchen, Mausbewegungen und Klicks, usw."
                             },
                         "9":
                             {
                                 "subcategory" : "Purpose",
+                                "subcategoryValue" : "Ads",
                                 "imagePath" : "res/SubCategory/purpose_ads_icon1.png",
                                 "description" : "Diese Informationen werden verwendet, um Ihnen maßgeschneiderte Inhalte anzubieten - beispielsweise auf Sie zugeschnittene Anzeigen und Werbung."
                             },
                         "10":
                             {
                                 "subcategory" : "Purpose",
+                                "subcategoryValue" : "Analytics",
                                 "imagePath" : "res/SubCategory/purpose_analytics_icon13.png",
-                                "description" : "Die gesammelten Informationen wie demographische Daten, Interessen und Verhaltenesweisen, werden für Forschungs- und Analysezwecke gespeichert, um Nutzer besser zu verstehen und die Produkte und Dienstleistungen zu verbessern."
+                                "description" : "Die gesammelten Informationen wie demographische Daten, Interessen und Verhaltenesweisen, werden für Forschungs- und Analysezwecke genutzt, um Nutzer besser zu verstehen und die Produkte und Dienstleistungen zu verbessern."
                             },
                         "11":
                             {
                                 "subcategory" : "Purpose",
+                                "subcategoryValue" : "Legal",
                                 "imagePath" : "res/SubCategory/purpose_legal_icon3.png",
-                                "description" : "Persönliche Daten werden im notwendingen und angemessenen Rahmen gespeichert, um die Rechte, die Privatsphäre, die Sicherheit oder das Eigentum des Dienstes, seiner Mitarbeiter oder Vertreter oder anderer Benutzer zu schützen und um geltendes Recht einzuhalten."
+                                "description" : "Persönliche Daten werden im notwendingen und angemessenen Rahmen verwendet, um die Rechte, die Privatsphäre, die Sicherheit oder das Eigentum des Dienstes, seiner Mitarbeiter oder Vertreter oder anderer Benutzer zu schützen und um geltendes Recht einzuhalten."
                             }
                     }
             },
