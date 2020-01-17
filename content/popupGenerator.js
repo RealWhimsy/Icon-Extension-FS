@@ -27,7 +27,6 @@ function createInputField() {
     reasonInput.setAttribute('rows', '5');
     reasonInput.addEventListener('input', function() {
       if(reasonInput.value.trim().length > 0) {
-        console.log("tup tup");
         acceptButton.setAttribute('id', 'accept-button');
         declineButton.setAttribute('id', 'decline-button')
       }
@@ -128,6 +127,7 @@ function displayMainIcon() {
 }
 
 function displaySubIcon() {
+    setSubIconAsUsed();
     setIconDescription();
 
     subCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentSubIcon['imagePath']));
@@ -139,26 +139,11 @@ function setIconDescription() {
     informationText.innerHTML = description;
 }
 
-function resetSubIcons() {
-    let subCategoryImages;
-    chrome.storage.local.get(['subCategoryImages'], function(result) {
-        subCategoryImages = result;
-        chrome.storage.local.set({availableSubIcons: subCategoryImages['subCategoryImages']}, function() {
-            chooseMainIcon();
-        });
-    });
-}
-
-function setSubIconAsUsed() {
-    chrome.storage.local.set({availableSubIcons: availableSubIcons}, function() {
-
-    });
-}
 
 
 function setNewTimestamp() {
     chrome.storage.local.set({'lastShownTimestamp': Date.now().valueOf()}, function() {
-        console.log("New timestamp: " + Date.now());
+
     });
 }
 

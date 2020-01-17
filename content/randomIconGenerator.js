@@ -16,9 +16,14 @@ function chooseMainIcon() {
 
 function chooseSubIcon() {
     chrome.storage.local.get(['availableSubIcons'], function(result) {
-        availableSubIcons = currentMainIcon['subcategories'];
-        getRandomSubIcon();
-        displaySubIcon();
+        availableSubIcons = result['availableSubIcons'];
+        console.log(availableSubIcons);
+        if(Object.keys(availableSubIcons).length <= 0) {
+            resetSubIcons();
+        } else {
+            getRandomSubIcon();
+            displaySubIcon();
+        }
     });
 }
 
@@ -49,8 +54,25 @@ function resetMainIcons() {
     });
 }
 
+function resetSubIcons() {
+    let subCategoryImages;
+    chrome.storage.local.get(['subCategoryImages'], function(result) {
+        subCategoryImages = result;
+        chrome.storage.local.set({availableSubIcons: subCategoryImages['subCategoryImages']}, function() {
+            availableSubIcons = result['availableSubIcons'];
+            chooseSubIcon();
+        });
+    });
+}
+
 function setMainIconAsUsed() {
     chrome.storage.local.set({availableMainIcons: availableMainIcons}, function() {
+
+    });
+}
+
+function setSubIconAsUsed() {
+    chrome.storage.local.set({availableSubIcons: availableSubIcons}, function() {
 
     });
 }
