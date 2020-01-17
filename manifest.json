@@ -17,6 +17,5 @@
     }
   ],
   "web_accessible_resources": ["res/MainCategory/*", "res/SubCategory/*"],
-  "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com  https://*.googletagmanager.com/; object-src 'self'; connect-src 'self' wss://*.firebaseio.com;",
   "manifest_version": 2
 }

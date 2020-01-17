@@ -4,7 +4,8 @@ let mainCategoryIcon, subCategoryIcon, overlay, iconContainer, overlayBox, infor
 
 let currentTime = Date.now();
 
-chrome.storage.local.get('lastShownTimestamp', function(result) {
+
+window.browser.storage.local.get('lastShownTimestamp', function(result) {
    if((currentTime - result['lastShownTimestamp']) / 1000 >= 3600) {
        createOverlay();
        createOverlayBox();
@@ -122,7 +123,7 @@ function displayMainIcon() {
     setMainIconAsUsed();
     chooseSubIcon();
 
-    mainCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentMainIcon['imagePath']));
+    mainCategoryIcon.setAttribute('src', window.browser.runtime.getURL(currentMainIcon['imagePath']));
     mainCategoryIcon.setAttribute('id', 'mainCategoryIcon');
 }
 
@@ -130,7 +131,7 @@ function displaySubIcon() {
     setSubIconAsUsed();
     setIconDescription();
 
-    subCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentSubIcon['imagePath']));
+    subCategoryIcon.setAttribute('src', window.browser.runtime.getURL(currentSubIcon['imagePath']));
     subCategoryIcon.setAttribute('id', 'subCategoryIcon');
 }
 
@@ -142,7 +143,7 @@ function setIconDescription() {
 
 
 function setNewTimestamp() {
-    chrome.storage.local.set({'lastShownTimestamp': Date.now().valueOf()}, function() {
+    window.browser.storage.local.set({'lastShownTimestamp': Date.now().valueOf()}, function() {
 
     });
 }

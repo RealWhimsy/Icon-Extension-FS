@@ -1,7 +1,7 @@
 
 function createNewLogEntry(isAccepted) {
     if(reasonInput.value.trim().length > 0) {
-        chrome.storage.local.get(['iconLog'], function (result) {
+        window.browser.storage.local.get(['iconLog'], function (result) {
             let currentIconLog = {
                 "categoryNumber": currentMainIcon['categoryNumber'],
                 "subcategory": currentSubIcon['subcategory'],
@@ -14,7 +14,7 @@ function createNewLogEntry(isAccepted) {
             console.log(result['iconLog']['logData']);
             result['iconLog']['logData'].push(currentIconLog);
 
-            chrome.storage.local.set({'iconLog': result['iconLog']}, function () {
+            window.browser.storage.local.set({'iconLog': result['iconLog']}, function () {
 
             });
 
