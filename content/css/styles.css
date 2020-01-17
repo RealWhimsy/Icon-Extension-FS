@@ -55,11 +55,25 @@
 }
 
 #accept-button {
-    background-color: #4aff7a;
+    background-color: #43A047;
+    color: #FFFFFF;
 }
 
 #decline-button {
-    background-color: #f04349;
+    background-color: #E64A19;
+    color: #FFFFFF;
+}
+
+#accept-button-inactive {
+    background-color: #DDDDDD;
+}
+
+.accept-button-class {
+    background-color: #4aff7a;
+}
+
+#decline-button-inactive {
+    background-color: #DDDDDD;
 }
 
 .fs-button {

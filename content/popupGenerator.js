@@ -1,6 +1,6 @@
 
 let mainCategoryIcon, subCategoryIcon, overlay, iconContainer, overlayBox, informationText, acceptButton, declineButton,
-    buttonContainer, lastShownTimestamp, currentMainIcon, currentSubIcon, reasonInput;
+    buttonContainer, lastShownTimestamp, currentMainIcon, currentSubIcon, reasonInput, questionText;
 
 let currentTime = Date.now();
 
@@ -12,6 +12,7 @@ chrome.storage.local.get('lastShownTimestamp', function(result) {
        createButtons();
        createInformationText();
        createInputField();
+       createQuestion();
        appendAllChildren();
        setNewTimestamp();
 
@@ -20,10 +21,17 @@ chrome.storage.local.get('lastShownTimestamp', function(result) {
 });
 
 function createInputField() {
-    reasonInput = document.createElement('input');
-    reasonInput.setAttribute('type', 'text');
+    reasonInput = document.createElement('textarea');
     reasonInput.setAttribute('id', 'reason-input');
     reasonInput.setAttribute('placeholder', 'Bitte Grund für ihre Auswahl eingeben');
+    reasonInput.setAttribute('rows', '5');
+    reasonInput.addEventListener('input', function() {
+      if(reasonInput.value.trim().length > 0) {
+        console.log("tup tup");
+        acceptButton.setAttribute('id', 'accept-button');
+        declineButton.setAttribute('id', 'decline-button')
+      }
+    });
 
 }
 
@@ -43,8 +51,8 @@ function createButtonContainer() {
 
 function createAcceptButton() {
     acceptButton = document.createElement('button');
-    acceptButton.innerHTML = "Accept";
-    acceptButton.setAttribute('id', 'accept-button');
+    acceptButton.innerHTML = "Annehmen";
+    acceptButton.setAttribute('id', 'accept-button-inactive');
     acceptButton.classList.add('fs-button');
     acceptButton.addEventListener('click', function () {
         createNewLogEntry(true);
@@ -53,12 +61,17 @@ function createAcceptButton() {
 
 function createDeclineButton() {
     declineButton = document.createElement('button');
-    declineButton.innerHTML = "Decline";
-    declineButton.setAttribute('id', 'decline-button');
+    declineButton.innerHTML = "Ablehnen";
     declineButton.classList.add('fs-button');
+      declineButton.setAttribute('id', 'decline-button-inactive');
     declineButton.addEventListener('click', function () {
         createNewLogEntry(false);
     });
+}
+
+function createQuestion() {
+  questionText = document.createElement('h4');
+  questionText.innerHTML =  "Möchten Sie das zulassen?"
 }
 
 function createInformationText() {
@@ -74,8 +87,9 @@ function appendAllChildren() {
     overlay.appendChild(overlayBox);
     overlayBox.appendChild(iconContainer);
     overlayBox.appendChild(informationText);
-    overlayBox.appendChild(buttonContainer);
+    overlayBox.appendChild(questionText);
     overlayBox.appendChild(reasonInput);
+    overlayBox.appendChild(buttonContainer);
     document.body.appendChild(overlay);
 }
 
@@ -150,6 +164,7 @@ function setNewTimestamp() {
 
 function on() {
     document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").style.zIndex = 8;
 }
 
 function off() {
