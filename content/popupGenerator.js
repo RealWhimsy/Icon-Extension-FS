@@ -96,7 +96,6 @@ function appendAllChildren() {
 function createOverlay() {
     overlay = document.createElement('overlay');
     overlay.setAttribute('id', 'overlay');
-    overlay.classList.add('row');
 }
 
 function createIcons() {
@@ -150,7 +149,6 @@ function setNewTimestamp() {
 
 function on() {
     document.getElementById("overlay").style.display = "block";
-    document.getElementById("overlay").style.zIndex = 8;
 }
 
 function off() {
