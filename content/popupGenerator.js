@@ -6,7 +6,7 @@ let currentTime = Date.now();
 
 
 chrome.storage.local.get('lastShownTimestamp', function(result) {
-   // if((currentTime - result['lastShownTimestamp']) / 1000 >= 3600) {
+   if((currentTime - result['lastShownTimestamp']) / 1000 >= 3600) {
        createOverlay();
        createOverlayBox();
        createIcons();
@@ -18,7 +18,7 @@ chrome.storage.local.get('lastShownTimestamp', function(result) {
        setNewTimestamp();
 
        on();
-   // }
+   }
 });
 
 function createInputField() {
