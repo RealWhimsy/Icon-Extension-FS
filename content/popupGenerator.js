@@ -5,8 +5,8 @@ let mainCategoryIcon, subCategoryIcon, overlay, iconContainer, overlayBox, infor
 let currentTime = Date.now();
 
 
-window.browser.storage.local.get('lastShownTimestamp', function(result) {
-   if((currentTime - result['lastShownTimestamp']) / 1000 >= 3600) {
+chrome.storage.local.get('lastShownTimestamp', function(result) {
+   // if((currentTime - result['lastShownTimestamp']) / 1000 >= 3600) {
        createOverlay();
        createOverlayBox();
        createIcons();
@@ -18,7 +18,7 @@ window.browser.storage.local.get('lastShownTimestamp', function(result) {
        setNewTimestamp();
 
        on();
-   }
+   // }
 });
 
 function createInputField() {
@@ -123,7 +123,7 @@ function displayMainIcon() {
     setMainIconAsUsed();
     chooseSubIcon();
 
-    mainCategoryIcon.setAttribute('src', window.browser.runtime.getURL(currentMainIcon['imagePath']));
+    mainCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentMainIcon['imagePath']));
     mainCategoryIcon.setAttribute('id', 'mainCategoryIcon');
 }
 
@@ -131,7 +131,7 @@ function displaySubIcon() {
     setSubIconAsUsed();
     setIconDescription();
 
-    subCategoryIcon.setAttribute('src', window.browser.runtime.getURL(currentSubIcon['imagePath']));
+    subCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentSubIcon['imagePath']));
     subCategoryIcon.setAttribute('id', 'subCategoryIcon');
 }
 
@@ -143,7 +143,7 @@ function setIconDescription() {
 
 
 function setNewTimestamp() {
-    window.browser.storage.local.set({'lastShownTimestamp': Date.now().valueOf()}, function() {
+    chrome.storage.local.set({'lastShownTimestamp': Date.now().valueOf()}, function() {
 
     });
 }

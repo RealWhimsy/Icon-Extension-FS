@@ -1,14 +1,10 @@
 
 let availableMainIcons, availableSubIcons;
 
-window.browser = (function() {
-    return window.msBrowser ||
-        window.browser ||
-        window.chrome;
-})();
+
 
 function chooseMainIcon() {
-    window.browser.storage.local.get(['availableMainIcons'], function(result) {
+    chrome.storage.local.get(['availableMainIcons'], function(result) {
         availableMainIcons = result['availableMainIcons'];
         if(Object.keys(availableMainIcons).length <= 0) {
             resetMainIcons();
@@ -20,9 +16,8 @@ function chooseMainIcon() {
 }
 
 function chooseSubIcon() {
-    window.browser.storage.local.get(['availableSubIcons'], function(result) {
+    chrome.storage.local.get(['availableSubIcons'], function(result) {
         availableSubIcons = result['availableSubIcons'];
-        console.log(availableSubIcons);
         if(Object.keys(availableSubIcons).length <= 0) {
             resetSubIcons();
         } else {
@@ -50,9 +45,9 @@ function getRandomMainIcon() {
 
 function resetMainIcons() {
     let mainCategoryImages;
-    window.browser.storage.local.get(['mainCategoryImages'], function(result) {
+    chrome.storage.local.get(['mainCategoryImages'], function(result) {
         mainCategoryImages = result;
-        window.browser.storage.local.set({availableMainIcons: mainCategoryImages['mainCategoryImages']}, function() {
+        chrome.storage.local.set({availableMainIcons: mainCategoryImages['mainCategoryImages']}, function() {
             availableMainIcons = result['availableMainIcons'];
             chooseMainIcon();
         });
@@ -61,9 +56,9 @@ function resetMainIcons() {
 
 function resetSubIcons() {
     let subCategoryImages;
-    window.browser.storage.local.get(['subCategoryImages'], function(result) {
+    chrome.storage.local.get(['subCategoryImages'], function(result) {
         subCategoryImages = result;
-        window.browser.storage.local.set({availableSubIcons: subCategoryImages['subCategoryImages']}, function() {
+        chrome.storage.local.set({availableSubIcons: subCategoryImages['subCategoryImages']}, function() {
             availableSubIcons = result['availableSubIcons'];
             chooseSubIcon();
         });
@@ -71,13 +66,13 @@ function resetSubIcons() {
 }
 
 function setMainIconAsUsed() {
-    window.browser.storage.local.set({availableMainIcons: availableMainIcons}, function() {
+    chrome.storage.local.set({availableMainIcons: availableMainIcons}, function() {
 
     });
 }
 
 function setSubIconAsUsed() {
-    window.browser.storage.local.set({availableSubIcons: availableSubIcons}, function() {
+    chrome.storage.local.set({availableSubIcons: availableSubIcons}, function() {
 
     });
 }

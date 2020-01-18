@@ -1,11 +1,7 @@
 
-window.browser = (function() {
-    return window.msBrowser ||
-        window.browser ||
-        window.chrome;
-})();
 
-window.browser.runtime.onInstalled.addListener(function () {
+
+chrome.runtime.onInstalled.addListener(function () {
     var mainCategoryImages, subCategoryImages, dummyDate, iconLog;
 
     mainCategoryImages = {
@@ -116,28 +112,28 @@ window.browser.runtime.onInstalled.addListener(function () {
     iconLog = {"logData" : [{}]};
 
     dummyDate = new Date(2000, 1, 1, 1, 1, 1, 1);
-    window.browser.storage.local.set({mainCategoryImages: mainCategoryImages}, function () {
+    chrome.storage.local.set({mainCategoryImages: mainCategoryImages}, function () {
         console.log("I was installed");
     });
     
 
-    window.browser.storage.local.set({availableMainIcons: mainCategoryImages}, function () {
+    chrome.storage.local.set({availableMainIcons: mainCategoryImages}, function () {
 
     });
 
-    window.browser.storage.local.set({subCategoryImages : subCategoryImages}, function () {
+    chrome.storage.local.set({subCategoryImages : subCategoryImages}, function () {
     });
 
-    window.browser.storage.local.set({availableSubIcons: subCategoryImages}, function () {
-
-    });
-
-
-    window.browser.storage.local.set({'lastShownTimestamp': dummyDate.valueOf()}, function () {
+    chrome.storage.local.set({availableSubIcons: subCategoryImages}, function () {
 
     });
 
-    window.browser.storage.local.set({'iconLog': iconLog}, function () {
+
+    chrome.storage.local.set({'lastShownTimestamp': dummyDate.valueOf()}, function () {
+
+    });
+
+    chrome.storage.local.set({'iconLog': iconLog}, function () {
 
     });
 });
