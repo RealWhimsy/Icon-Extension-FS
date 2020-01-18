@@ -12,6 +12,16 @@
     cursor: pointer; /* Add a pointer on hover */
 }
 
+#overlay * {
+    font-family: 'Lato', Helvetica, sans-serif !important;
+}
+
+#overlay h4 {
+    font-size: medium !important;
+    font-weight: bold !important;
+    line-height: 1.1 !important;
+}
+
 #mainCategoryIcon {
     max-width: 200px;
     max-height: 200px;
@@ -31,7 +41,7 @@
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    font-family: 'Lato', Helvetica, sans-serif;
+    font-family: 'Lato', Helvetica, sans-serif !important;
 }
 
 .fs-button {
