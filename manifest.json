@@ -12,7 +12,7 @@
   "content_scripts": [
     {
       "matches": ["https://*/*"],
-      "css": ["content/css/styles.css"],
+      "css": ["content/css/styles.css", "content/css/simple-grid.css"],
       "js": ["content/randomIconGenerator.js", "content/popupGenerator.js", "content/informationLogger.js"]
     }
   ],

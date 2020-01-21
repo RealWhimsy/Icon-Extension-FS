@@ -22,14 +22,35 @@
     line-height: 1.1 !important;
 }
 
+#icon-main-container {
+    float: left;
+}
+
+#icon-image-container {
+    float: left;
+}
+
+#icon-text-container {
+    float: right;
+}
+
 #mainCategoryIcon {
-    max-width: 200px;
-    max-height: 200px;
+    display: inline;
+    padding-left: 10px;
+    width: 66%;
+    height: 100%;
 }
 
 #subCategoryIcon {
-    max-width: 100px;
-    max-height: 100px;
+    display: inline;
+    position: absolute;
+    bottom: 0px;
+    width: 33%;
+}
+
+#icon-sub-information-text {
+    position: absolute;
+    bottom: 0px;
 }
 
 #overlayBox {
@@ -52,6 +73,10 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+#icon-question-text {
+    padding-top: 350px;
 }
 
 #reason-input {

@@ -1,14 +1,15 @@
 
-let mainCategoryIcon, subCategoryIcon, overlay, iconContainer, overlayBox, informationText, acceptButton, declineButton,
+let mainCategoryIcon, subCategoryIcon, overlay, mainContainer, iconContainer, textContainer, overlayBox, mainInformationText, subInformationText, acceptButton, declineButton,
     buttonContainer, lastShownTimestamp, currentMainIcon, currentSubIcon, reasonInput, questionText;
 
 let currentTime = Date.now();
 
 
 chrome.storage.local.get('lastShownTimestamp', function(result) {
-   if((currentTime - result['lastShownTimestamp']) / 1000 >= 3600) {
+   // if((currentTime - result['lastShownTimestamp']) / 1000 >= 3600) {
        createOverlay();
        createOverlayBox();
+       createMainContainer();
        createIcons();
        createButtons();
        createInformationText();
@@ -18,8 +19,14 @@ chrome.storage.local.get('lastShownTimestamp', function(result) {
        setNewTimestamp();
 
        on();
-   }
+   // }
 });
+
+function createMainContainer() {
+    mainContainer = document.createElement('div');
+    mainContainer.setAttribute('id', 'icon-main-container');
+    mainContainer.classList.add('row');
+}
 
 function createInputField() {
     reasonInput = document.createElement('textarea');
@@ -71,11 +78,24 @@ function createDeclineButton() {
 
 function createQuestion() {
   questionText = document.createElement('h4');
+  questionText.setAttribute('id', 'icon-question-text');
   questionText.innerHTML =  "Möchten Sie das zulassen?"
 }
 
 function createInformationText() {
-    informationText = document.createElement('h4');
+    textContainer = document.createElement('div');
+    textContainer.setAttribute('id', 'icon-text-container');
+    textContainer.classList.add('col-6');
+
+    mainInformationText = document.createElement('h4');
+    mainInformationText.setAttribute('id', 'icon-main-information-text');
+
+    subInformationText = document.createElement('h4');
+    subInformationText.setAttribute('id', 'icon-sub-information-text');
+
+    textContainer.appendChild(mainInformationText);
+    textContainer.appendChild(subInformationText);
+    mainContainer.appendChild(textContainer);
 }
 
 function createOverlayBox() {
@@ -85,8 +105,7 @@ function createOverlayBox() {
 
 function appendAllChildren() {
     overlay.appendChild(overlayBox);
-    overlayBox.appendChild(iconContainer);
-    overlayBox.appendChild(informationText);
+    overlayBox.appendChild(mainContainer);
     overlayBox.appendChild(questionText);
     overlayBox.appendChild(reasonInput);
     overlayBox.appendChild(buttonContainer);
@@ -112,9 +131,11 @@ function setupIcons() {
 function setupIconContainer() {
     iconContainer = document.createElement('div');
     iconContainer.classList.add('row');
-    iconContainer.setAttribute('id', 'iconContainer');
+    iconContainer.setAttribute('id', 'icon-image-container');
+    iconContainer.classList.add('col-6');
     iconContainer.appendChild(mainCategoryIcon);
     iconContainer.appendChild(subCategoryIcon);
+    mainContainer.appendChild(iconContainer);
 }
 
 
@@ -136,7 +157,8 @@ function displaySubIcon() {
 
 function setIconDescription() {
     let description = "" + currentMainIcon['description'] + "</br></br>" + currentSubIcon['description'];
-    informationText.innerHTML = description;
+    mainInformationText.innerHTML = currentMainIcon['description'];
+    subInformationText.innerHTML = currentSubIcon['description'];
 }
 
 
