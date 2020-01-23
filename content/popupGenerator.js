@@ -133,8 +133,14 @@ function setupIconContainer() {
     iconContainer.classList.add('row');
     iconContainer.setAttribute('id', 'icon-image-container');
     iconContainer.classList.add('col-6');
+
+    let subIconContainer = document.createElement('div');
+    subIconContainer.setAttribute('id', 'sub-icon-container');
+    subIconContainer.classList.add('col-3');
+
     iconContainer.appendChild(mainCategoryIcon);
-    iconContainer.appendChild(subCategoryIcon);
+    subIconContainer.appendChild(subCategoryIcon);
+    iconContainer.appendChild(subIconContainer);
     mainContainer.appendChild(iconContainer);
 }
 
@@ -145,6 +151,7 @@ function displayMainIcon() {
 
     mainCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentMainIcon['imagePath']));
     mainCategoryIcon.setAttribute('id', 'mainCategoryIcon');
+    mainCategoryIcon.classList.add('col-7');
 }
 
 function displaySubIcon() {
@@ -153,6 +160,7 @@ function displaySubIcon() {
 
     subCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentSubIcon['imagePath']));
     subCategoryIcon.setAttribute('id', 'subCategoryIcon');
+    subCategoryIcon.classList.add('col-3');
 }
 
 function setIconDescription() {
