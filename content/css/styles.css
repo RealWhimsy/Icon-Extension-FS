@@ -35,6 +35,7 @@
 #icon-text-container {
     float: right;
     min-height: 260px;
+    text-align: justified !important
 }
 
 #mainCategoryIcon {
