@@ -3,7 +3,7 @@
   "version": "1.4",
   "description": "Periodically shows and explains random PP icons",
   "permissions": [
-    "storage"
+    "storage", "activeTab",  "downloads"
   ],
   "background": {
     "scripts": ["background/onInstall.js"],
