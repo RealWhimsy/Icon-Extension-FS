@@ -25,6 +25,12 @@
 
 #icon-main-container {
     float: left;
+    margin-bottom:10px;
+}
+
+#popup-function-heading{
+    margin-top:0px !important;
+    padding-bottom: 10px;
 }
 
 #icon-image-container {
@@ -35,7 +41,7 @@
 #icon-text-container {
     float: right;
     min-height: 260px;
-    text-align: justify !important
+    text-align: left !important
 }
 
 #mainCategoryIcon {

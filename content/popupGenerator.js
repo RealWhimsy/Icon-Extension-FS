@@ -1,6 +1,6 @@
 
 let mainCategoryIcon, subCategoryIcon, overlay, mainContainer, iconContainer, textContainer, overlayBox, mainInformationText, subInformationText, acceptButton, declineButton,
-    buttonContainer, lastShownTimestamp, currentMainIcon, currentSubIcon, reasonInput, questionText;
+    buttonContainer, lastShownTimestamp, currentMainIcon, currentSubIcon, reasonInput, questionText, heading;
 
 let currentTime = Date.now();
 
@@ -26,6 +26,11 @@ function createMainContainer() {
     mainContainer = document.createElement('div');
     mainContainer.setAttribute('id', 'icon-main-container');
     mainContainer.classList.add('icon-extension-row');
+    heading = document.createElement('h4');
+    heading.setAttribute('id', 'popup-function-heading');
+    heading.classList.add('icon-extension-row');
+    heading.innerHTML = "Informationen über aktuelle Webseite";
+    mainContainer.appendChild(heading);
 }
 
 function createInputField() {
