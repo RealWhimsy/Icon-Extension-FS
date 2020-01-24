@@ -17,6 +17,7 @@
 }
 
 #overlay h4 {
+    color: black !important;
     font-size: medium !important;
     font-weight: bold !important;
     line-height: 1.1 !important;
