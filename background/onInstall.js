@@ -68,7 +68,7 @@ chrome.runtime.onInstalled.addListener(function () {
                     "subcategory" : "Purpose",
                     "subcategoryValue" : "Legal",
                     "imagePath" : "res/SubCategory/SubCat_Purpose_Legal.png",
-                    "description" : "Persönliche Daten werden im notwendingen und angemessenen Rahmen verwendet, um die Rechte, die Privatsphäre, die Sicherheit oder das Eigentum des Dienstes, seiner Mitarbeiter oder Vertreter oder anderer Benutzer zu schützen und um geltendes Recht einzuhalten."
+                    "description" : "Persönliche Daten werden im notwendigen und angemessenen Rahmen verwendet, um die Rechte, die Privatsphäre, die Sicherheit oder das Eigentum des Dienstes, seiner Mitarbeiter oder Vertreter oder anderer Benutzer zu schützen und um geltendes Recht einzuhalten."
                 }
         };
 
