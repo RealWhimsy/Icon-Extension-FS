@@ -91,6 +91,7 @@
 #reason-input {
     width: 100%;
     text-align: center;
+    color: black !important;
 }
 
 .empty-input-warning::-webkit-input-placeholder {
