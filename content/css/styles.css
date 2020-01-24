@@ -42,7 +42,7 @@
     display: inline;
     width: 50%;
     height: 100%;
-    min-width: 250px;
+    min-width: 220px;
 }
 
 #subCategoryIcon {
@@ -50,7 +50,7 @@
     bottom: 0px;
     display: inline;
     width: 30%;
-    min-width: 150px;
+    min-width: 120px;
 }
 
 #sub-icon-container {
@@ -86,7 +86,7 @@
 }
 
 #icon-question-text {
-    padding-top: 350px;
+    padding-top: 200px;
 }
 
 #reason-input {
@@ -123,6 +123,6 @@
 }
 
 .fs-button {
-    margin: 20px;
+    margin: 10px 20px;
     position: center;
 }
