@@ -25,7 +25,7 @@ chrome.storage.local.get('lastShownTimestamp', function(result) {
 function createMainContainer() {
     mainContainer = document.createElement('div');
     mainContainer.setAttribute('id', 'icon-main-container');
-    mainContainer.classList.add('row');
+    mainContainer.classList.add('icon-extension-row');
 }
 
 function createInputField() {
@@ -50,7 +50,7 @@ function createButtons() {
 
 function createButtonContainer() {
     buttonContainer = document.createElement('div');
-    buttonContainer.classList.add('row');
+    buttonContainer.classList.add('icon-extension-row');
     buttonContainer.appendChild(acceptButton);
     buttonContainer.appendChild(declineButton);
     buttonContainer.setAttribute('id', 'buttonContainer');
@@ -85,7 +85,7 @@ function createQuestion() {
 function createInformationText() {
     textContainer = document.createElement('div');
     textContainer.setAttribute('id', 'icon-text-container');
-    textContainer.classList.add('col-6');
+    textContainer.classList.add('icon-extension-col-6');
 
     mainInformationText = document.createElement('h4');
     mainInformationText.setAttribute('id', 'icon-main-information-text');
@@ -130,13 +130,13 @@ function setupIcons() {
 
 function setupIconContainer() {
     iconContainer = document.createElement('div');
-    iconContainer.classList.add('row');
+    iconContainer.classList.add('icon-extension-row');
     iconContainer.setAttribute('id', 'icon-image-container');
-    iconContainer.classList.add('col-6');
+    iconContainer.classList.add('icon-extension-col-6');
 
     let subIconContainer = document.createElement('div');
     subIconContainer.setAttribute('id', 'sub-icon-container');
-    subIconContainer.classList.add('col-3');
+    subIconContainer.classList.add('icon-extension-col-3');
 
     iconContainer.appendChild(mainCategoryIcon);
     subIconContainer.appendChild(subCategoryIcon);
@@ -151,7 +151,7 @@ function displayMainIcon() {
 
     mainCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentMainIcon['imagePath']));
     mainCategoryIcon.setAttribute('id', 'mainCategoryIcon');
-    mainCategoryIcon.classList.add('col-7');
+    mainCategoryIcon.classList.add('icon-extension-col-7');
 }
 
 function displaySubIcon() {
@@ -160,7 +160,7 @@ function displaySubIcon() {
 
     subCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentSubIcon['imagePath']));
     subCategoryIcon.setAttribute('id', 'subCategoryIcon');
-    subCategoryIcon.classList.add('col-3');
+    subCategoryIcon.classList.add('icon-extension-col-3');
 }
 
 function setIconDescription() {
