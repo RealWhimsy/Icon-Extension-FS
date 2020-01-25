@@ -1,6 +1,6 @@
 {
   "name": "Icon Extension",
-  "version": "1.4",
+  "version": "1.5",
   "description": "Periodically shows and explains random PP icons",
   "permissions": [
     "storage", "activeTab",  "downloads"
