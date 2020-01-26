@@ -139,12 +139,7 @@ function setupIconContainer() {
     iconContainer.setAttribute('id', 'icon-image-container');
     iconContainer.classList.add('icon-extension-col-3');
 
-    let subIconContainer = document.createElement('div');
-    subIconContainer.setAttribute('id', 'sub-icon-container');
-    subIconContainer.classList.add('icon-extension-col-3');
-
     iconContainer.appendChild(mainCategoryIcon);
-    // subIconContainer.appendChild(subCategoryIcon);
     iconContainer.appendChild(subCategoryIcon);
     mainContainer.appendChild(iconContainer);
 }
