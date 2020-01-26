@@ -75,7 +75,7 @@ function createDeclineButton() {
     declineButton = document.createElement('button');
     declineButton.innerHTML = "Ablehnen";
     declineButton.classList.add('fs-button');
-      declineButton.setAttribute('id', 'decline-button-inactive');
+    declineButton.setAttribute('id', 'decline-button-inactive');
     declineButton.addEventListener('click', function () {
         createNewLogEntry(false);
     });
