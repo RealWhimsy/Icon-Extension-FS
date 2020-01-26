@@ -90,7 +90,7 @@ function createQuestion() {
 function createInformationText() {
     textContainer = document.createElement('div');
     textContainer.setAttribute('id', 'icon-text-container');
-    textContainer.classList.add('icon-extension-col-6');
+    textContainer.classList.add('icon-extension-col-9');
 
     mainInformationText = document.createElement('h4');
     mainInformationText.setAttribute('id', 'icon-main-information-text');
@@ -137,15 +137,15 @@ function setupIconContainer() {
     iconContainer = document.createElement('div');
     iconContainer.classList.add('icon-extension-row');
     iconContainer.setAttribute('id', 'icon-image-container');
-    iconContainer.classList.add('icon-extension-col-6');
+    iconContainer.classList.add('icon-extension-col-3');
 
     let subIconContainer = document.createElement('div');
     subIconContainer.setAttribute('id', 'sub-icon-container');
     subIconContainer.classList.add('icon-extension-col-3');
 
     iconContainer.appendChild(mainCategoryIcon);
-    subIconContainer.appendChild(subCategoryIcon);
-    iconContainer.appendChild(subIconContainer);
+    // subIconContainer.appendChild(subCategoryIcon);
+    iconContainer.appendChild(subCategoryIcon);
     mainContainer.appendChild(iconContainer);
 }
 
@@ -165,7 +165,7 @@ function displaySubIcon() {
 
     subCategoryIcon.setAttribute('src', chrome.runtime.getURL(currentSubIcon['imagePath']));
     subCategoryIcon.setAttribute('id', 'subCategoryIcon');
-    subCategoryIcon.classList.add('icon-extension-col-3');
+    subCategoryIcon.classList.add('icon-extension-col-5');
 }
 
 function setIconDescription() {
