@@ -14,8 +14,6 @@ The extension works on Chrome and Firefox browsers. Every hour of browsing it di
 4. Browse to the file downloaded in the first step and open it.
 5. The extension is now added to your Firefox.
 
-For more detailed installation instructions with screenshots please [see here](https://drive.google.com/open?id=1xKIsF-0Wtd1TfMIvmG24_sJ-F1UkTl1L) (German instructions)
-
 
 ### For Chrome:
 1. Download the whole repository as .zip ('Clone or download' in the top right, then Download as .zip).
@@ -24,8 +22,6 @@ For more detailed installation instructions with screenshots please [see here](h
 4. Enable Developer Mode by clicking the toggle switch next to "Developer mode".
 5. Click the "load unpacked" button and select the extension directory.
 6. The extension is now added to Chrome.
-
-For more detailed installation instructions with screenshots please [see here](https://drive.google.com/open?id=1Syfe0kH2Qq1IpiOQhIaVMGY82XiWEg03) (German instructions)
 
 
 ## Data logging
@@ -56,6 +52,8 @@ window.browser.downloads.download({ url: url });
 6. A warning might pop up if this is the first time you paste code into the developer console. Read the warning, then type 'allow paste' into the console.
 7. Press enter to run the pasted code fragment. A window with the logged data should pop up, which can be saved.
 
+For more detailed instructions with screenshots please [see here](https://drive.google.com/open?id=1xKIsF-0Wtd1TfMIvmG24_sJ-F1UkTl1L) (German instructions)
+
 
 ### Reading logged data on Chrome:
 
@@ -66,5 +64,7 @@ window.browser.downloads.download({ url: url });
 5. A developer window should pop up. Click on the double-arrow ">>" and choose 'Storage Explorer' from the dropdown menu
 6. Click the 'Export' Button and choose 'To file'
 7. The log data should now be saving and can be found in your default Chrome downloads folder (ctrl + j)
+
+For more detailed instructions with screenshots please [see here](https://drive.google.com/open?id=1Syfe0kH2Qq1IpiOQhIaVMGY82XiWEg03) (German instructions)
 
 
