@@ -41,7 +41,7 @@ Sensible data, such as IP-Addresses or which sites were visited are **not** bein
 3. Locate the entry for the icon extension and click 'Inspect'
 4. A developer Window should open. Click on the header tab 'Console'
 5. Copy and paste the following code segment into the console:
-```
+```javascript
 window.browser.storage.local.get(null, function(items) {
 var blob = new Blob([JSON.stringify(items, null,' ')], {type: "text/plain"});
 var url = URL.createObjectURL(blob);
