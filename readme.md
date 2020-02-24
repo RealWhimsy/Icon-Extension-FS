@@ -8,20 +8,20 @@ The extension works on Chrome and Firefox browsers. Every hour of browsing it di
 ## Installation
 
 ### For Firefox:
-- Download the file 'icon_extension-1.7-fx.xpi' from the repository's main folder (alternatively download the whole repository and find the file within the downloaded folder).
-- Open Firefox and type 'about:addons' in the browser's address bar.
-- Click on the cogwheel at the top right and select 'Install add-on from file'.
-- Browse to the file downloaded in the first step and open it.
-- The extension is now added to your Firefox.
+1. Download the file 'icon_extension-1.7-fx.xpi' from the repository's main folder (alternatively download the whole repository and find the file within the downloaded folder).
+2. Open Firefox and type 'about:addons' in the browser's address bar.
+3. Click on the cogwheel at the top right and select 'Install add-on from file'.
+4. Browse to the file downloaded in the first step and open it.
+5. The extension is now added to your Firefox.
 
 
 ### For Chrome:
-- Download the whole repository as .zip ('Clone or download' in the top right, then Download as .zip).
-- Extract the .zip file. You need to keep the extracted files on your PC for as long as you want the extension to work.
-- Open chrome and type 'chrome://extensions' in the browser's address bar.
-- Enable Developer Mode by clicking the toggle switch next to "Developer mode".
-- Click the "load unpacked" button and select the extension directory.
-- The extension is now added to Chrome.
+1. Download the whole repository as .zip ('Clone or download' in the top right, then Download as .zip).
+2. Extract the .zip file. You need to keep the extracted files on your PC for as long as you want the extension to work.
+3. Open chrome and type 'chrome://extensions' in the browser's address bar.
+4. Enable Developer Mode by clicking the toggle switch next to "Developer mode".
+5. Click the "load unpacked" button and select the extension directory.
+6. The extension is now added to Chrome.
 
 
 ## Data logging
