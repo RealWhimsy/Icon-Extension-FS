@@ -14,6 +14,8 @@ The extension works on Chrome and Firefox browsers. Every hour of browsing it di
 4. Browse to the file downloaded in the first step and open it.
 5. The extension is now added to your Firefox.
 
+For more detailed installation instructions with screenshots please [see here](https://drive.google.com/open?id=1xKIsF-0Wtd1TfMIvmG24_sJ-F1UkTl1L) (German instructions)
+
 
 ### For Chrome:
 1. Download the whole repository as .zip ('Clone or download' in the top right, then Download as .zip).
@@ -22,6 +24,8 @@ The extension works on Chrome and Firefox browsers. Every hour of browsing it di
 4. Enable Developer Mode by clicking the toggle switch next to "Developer mode".
 5. Click the "load unpacked" button and select the extension directory.
 6. The extension is now added to Chrome.
+
+For more detailed installation instructions with screenshots please [see here](https://drive.google.com/open?id=1Syfe0kH2Qq1IpiOQhIaVMGY82XiWEg03) (German instructions)
 
 
 ## Data logging
